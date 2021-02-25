@@ -289,13 +289,13 @@ function M.fancy_floating_markdown(contents, opts)
 
 -- the max width of doc float window keep has 20 pad
   local WIN_WIDTH = vim.fn.winwidth(0)
-  local max_width = math.floor(WIN_WIDTH * 0.5)
+  local max_width = math.floor(WIN_WIDTH * opts.max_hoverdoc_width)
 
   if width > max_width and math.floor(width/WIN_WIDTH) >= 0.8 then
     width = max_width
   end
 
-  local max_height = math.ceil((WIN_HEIGHT - 4) * 0.5)
+  local max_height = math.ceil((WIN_HEIGHT - 4) * opts.max_hoverdoc_height)
 
   if #stripped + 4 > max_height then
     opts.height = max_height
