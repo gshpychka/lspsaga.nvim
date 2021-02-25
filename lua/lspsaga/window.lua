@@ -1,6 +1,7 @@
 local vim,api = vim,vim.api
 local M = {}
 local wrap = require('lspsaga.wrap')
+local config = require('lspsaga').config_values
 
 -- 1 thin
 -- 2 radio
@@ -289,13 +290,13 @@ function M.fancy_floating_markdown(contents, opts)
 
 -- the max width of doc float window keep has 20 pad
   local WIN_WIDTH = vim.fn.winwidth(0)
-  local max_width = math.floor(WIN_WIDTH * opts.hoverdoc_max_width)
+  local max_width = math.floor(WIN_WIDTH * config.hoverdoc_max_width)
 
   if width > max_width and math.floor(width/WIN_WIDTH) >= 0.8 then
     width = max_width
   end
 
-  local max_height = math.ceil((WIN_HEIGHT - 4) * opts.hoverdoc_max_height)
+  local max_height = math.ceil((WIN_HEIGHT - 4) * config.hoverdoc_max_height)
 
   if #stripped + 4 > max_height then
     opts.height = max_height
