@@ -30,8 +30,8 @@ saga.config_values = {
   rename_prompt_prefix = '➤',
   server_filetype_map = {},
   -- hoverdoc float window size, relative to window width
-  max_hoverdoc_width = 0.5
-  max_hoverdoc_height = 0.5
+  hoverdoc_max_width = 0.5,
+  hoverdoc_max_height = 0.5
 }
 
 local extend_config = function(opts)
